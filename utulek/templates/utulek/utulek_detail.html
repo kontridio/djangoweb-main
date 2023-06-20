@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ utulek }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="display-4 text-center bg-info mt-5">{{ utulek.name }}</h2>
+    <div class="row bg-secondary p-3 text-light">
+
+        <div class="col-lg-5">
+            <img src="{{ utulek.fotografie.url }}"
+                 class="img-fluid rounded mb-5"
+                 alt="{{ utulek.name }}">
+            <p class="text-dark h4">Adresa: <b>{{ utulek.adresa }}</b></p>
+            <p class="text-dark h4">Město: <b>{{ utulek.mesto_nazev.nazev_mesta }}</b></p>
+            <p class="text-dark h4">Telefon: <b>{{ utulek.mobil }}</b></p>
+            <h4 class="text-dark">Otevírací doba od: <b>{{ utulek.cas_od}}</b></h4>
+            <h4 class="text-dark">Otevírací doba do: <b>{{ utulek.cas_do}}</b></h4>
+        </div>
+
+        <div class="col-lg-7">
+            <h3 class="text-light h2">O nás</h3>
+            <div class="text-dark h3">{{ utulek.popis }}</div>
+        </div>
+
+    </div>
+{% endblock %}

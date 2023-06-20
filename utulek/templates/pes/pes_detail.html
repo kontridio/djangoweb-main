@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ pes }}
+{% endblock %}
+
+{% block content %}
+    <h2 class="display-4 text-center bg-info mt-5">{{ pes.jmeno_psa }}</h2>
+    <div class="row bg-secondary p-3 text-light">
+
+        <div class="col-lg-5">
+            <img src="{{ pes.fotografie.url }}"
+                 class="img-fluid rounded mb-5"
+                 alt="{{ pes.jmeno_psa }}">
+            <p class="text-dark h4">Útulek: <b>{{ pes.utulek_nazev }}</b></p>
+            <p class="text-dark h4">{{ pes.utulek_nazev.adresa }}</p>
+            <p class="text-dark h4">Věk psa: <b>{{ pes.vek }}</b></p>
+            <p class="text-dark h4">Očkování: <b>{{ pes.ockovani }}</b></p>
+            <h4 class="text-dark">Rasa: <b>{{ pes.rasa}}</b></h4>
+            <h4 class="text-dark">Pohlaví: <b>{{ pes.pohlavi}}</b></h4>
+        </div>
+
+        <div class="col-lg-7">
+            <h3 class="text-light h2">Něco o pejskovi</h3>
+            <div class="text-dark h3">{{ pes.popis }}</div>
+        </div>
+
+    </div>
+{% endblock %}

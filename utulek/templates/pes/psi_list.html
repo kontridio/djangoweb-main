@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Seznam psů
+{% endblock %}
+
+{% block content %}
+    <h2 class="display-4 text-center bg-info mt-5 p-2">Galerie pejsků</h2>
+    <div class="row bg-secondary p-3">
+    {% for pes in psi %}
+        <div class="col-lg-4 col-md-3 mb-3">
+            <img src="{{ pes.fotografie.url }}"
+                 class="rounded mx-auto d-block"
+                 alt="{{ pes.jmeno_psa }}" height="200" width="230">
+            <p class="bg-white rounded-bottom text-center text-white h2"><a href="{% url 'pes_detail' pes.id %}">{{ pes.jmeno_psa }}</a></p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
